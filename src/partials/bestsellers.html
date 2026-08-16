@@ -1,5 +1,57 @@
-<section class="bestsellers section">
-  <div class="container">
-    bestsellers
-  </div>
+<section class="bestsellers section" aria-labelledby="popular-title">
+    <div class="container">
+        <h2 id="popular-title" class="popular-title">Наші бестселлери</h2>
+
+        <!-- Лоадер -->
+        <div id="popular-loader" class="loader hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- Контейнер Swiper -->
+        <div class="swiper popular-swiper">
+            <div class="swiper-wrapper" id="popular-list">
+                <!-- Картки рендеряться динамічно -->
+            </div>
+
+            <!-- Елементи керування слайдером -->
+            <div class="popular-controls">
+                <div class="swiper-pagination" id="popular-pagination"></div>
+
+                <div class="navigation-buttons">
+                    <button
+                        type="button"
+                        class="swiper-button-prev-custom"
+                        aria-label="Попередній слайд"
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button
+                        type="button"
+                        class="swiper-button-next-custom"
+                        aria-label="Наступний слайд"
+                    >
+                        <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

@@ -17,7 +17,9 @@
   "author": "Roman Khlopyk rx@lyc2.org",
   "license": "ISC",
   "dependencies": {
+    "izitoast": "^1.4.0",
     "modern-normalize": "^3.0.1",
+    "swiper": "^14.1.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
