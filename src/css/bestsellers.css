@@ -19,16 +19,30 @@
     overflow: hidden;
 }
 
-.swiper-slide {
-    height: auto;
+/* 
+  КЛЮЧОВИЙ ФІКС ВИСОТИ КАРТОК:
+  1. Zмушуємо swiper-wrapper вирівнювати всі слайди по висоті найвищого (align-items: stretch).
+  2. Zмушуємо swiper-slide розтягувати свій вміст (display: flex).
+*/
+.popular-swiper .swiper-wrapper {
+    display: flex;
+    align-items: stretch; /* Розтягує всі слайди в ряду на однакову висоту */
 }
 
-/* Картка товару */
+.popular-swiper .swiper-slide {
+    height: auto; /* Дозволяє висоті адаптуватися під найвищий слайд */
+    display: flex; /* Розтягує внутрішню картку .product-card на 100% */
+}
+
+/* Картка товару — точні параметри з Figma */
 .product-card {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
     gap: 16px;
-    height: 100%;
+    width: 100%;
+    height: 100%; /* Тепер 100% чітко розтягує картку на всю висоту слайда */
     padding: 16px;
     border: 1px solid #d9dada;
     border-radius: 16px;
@@ -46,7 +60,8 @@
 .product-info {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    width: 100%;
+    flex-grow: 1; /* Займає весь вільний простір картки */
 }
 
 .product-category {
@@ -68,14 +83,15 @@
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 8px;
-    flex-grow: 1;
+    flex-grow: 1; /* Притискає ціну та кнопку строго до низу */
 }
 
 .product-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: auto;
+    width: 100%;
+    margin-top: auto; /* Фіксує футер знизу */
 }
 
 .product-price {
@@ -144,14 +160,13 @@
     background-color: #080c0c;
 }
 
-/* Кнопки навігації слайдера (Slider Arrows) */
+/* Кнопки навігації слайдера (Slider Arrows з Figma) */
 .navigation-buttons {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-/* 1. Normal стан: біле тло, чорна рамка 2px */
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
     width: 48px;
@@ -177,7 +192,6 @@
     stroke: currentColor;
 }
 
-/* 2. Hover / Focus стан: рожеве тло (--color-wewak) */
 .swiper-button-prev-custom:hover,
 .swiper-button-next-custom:hover,
 .swiper-button-prev-custom:focus-visible,
@@ -187,7 +201,6 @@
     border-color: #080c0c;
 }
 
-/* 3. Active стан: темно-рожеве тло (--color-wewak-dark) */
 .swiper-button-prev-custom:active,
 .swiper-button-next-custom:active {
     background-color: #d18d8d;
@@ -195,7 +208,6 @@
     border-color: #080c0c;
 }
 
-/* 4. Disabled стан: opacity 0.2 */
 .swiper-button-prev-custom.swiper-button-disabled,
 .swiper-button-next-custom.swiper-button-disabled {
     opacity: 0.2;
