@@ -14,8 +14,6 @@ const loaderEl = document.getElementById('popular-loader');
 
 let swiperInstance = null;
 
-/* ---------- Хелпери ---------- */
-
 function showToastError(message) {
     iziToast.error({
         message,
@@ -38,8 +36,6 @@ function toggleLoader(isLoading) {
 function extractItems(data) {
     return data?.desserts ?? [];
 }
-
-/* ---------- Основна логіка ---------- */
 
 async function fetchPopularProducts() {
     if (!popularListEl) return;

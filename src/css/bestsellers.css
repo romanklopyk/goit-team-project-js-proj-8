@@ -1,5 +1,3 @@
-/* Секція "Наші бестселлери" */
-
 .bestsellers {
     background-color: #f5fdfd;
 }
@@ -19,22 +17,16 @@
     overflow: hidden;
 }
 
-/* 
-  КЛЮЧОВИЙ ФІКС ВИСОТИ КАРТОК:
-  1. Zмушуємо swiper-wrapper вирівнювати всі слайди по висоті найвищого (align-items: stretch).
-  2. Zмушуємо swiper-slide розтягувати свій вміст (display: flex).
-*/
 .popular-swiper .swiper-wrapper {
     display: flex;
-    align-items: stretch; /* Розтягує всі слайди в ряду на однакову висоту */
+    align-items: stretch;
 }
 
 .popular-swiper .swiper-slide {
-    height: auto; /* Дозволяє висоті адаптуватися під найвищий слайд */
-    display: flex; /* Розтягує внутрішню картку .product-card на 100% */
+    height: auto;
+    display: flex;
 }
 
-/* Картка товару — точні параметри з Figma */
 .product-card {
     display: flex;
     flex-direction: column;
@@ -42,7 +34,7 @@
     justify-content: flex-start;
     gap: 16px;
     width: 100%;
-    height: 100%; /* Тепер 100% чітко розтягує картку на всю висоту слайда */
+    height: 100%;
     padding: 16px;
     border: 1px solid #d9dada;
     border-radius: 16px;
@@ -61,7 +53,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    flex-grow: 1; /* Займає весь вільний простір картки */
+    flex-grow: 1;
 }
 
 .product-category {
@@ -83,7 +75,7 @@
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 8px;
-    flex-grow: 1; /* Притискає ціну та кнопку строго до низу */
+    flex-grow: 1;
 }
 
 .product-footer {
@@ -91,7 +83,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-top: auto; /* Фіксує футер знизу */
+    margin-top: auto;
 }
 
 .product-price {
@@ -100,7 +92,6 @@
     line-height: 1.5;
 }
 
-/* Кругла кнопка деталей у картці */
 .btn-details {
     flex-shrink: 0;
     width: 40px;
@@ -123,7 +114,6 @@
     color: #ffffff;
 }
 
-/* Контроли Swiper */
 .popular-controls {
     display: flex;
     align-items: center;
@@ -160,7 +150,6 @@
     background-color: #080c0c;
 }
 
-/* Кнопки навігації слайдера (Slider Arrows з Figma) */
 .navigation-buttons {
     display: flex;
     align-items: center;
@@ -217,7 +206,6 @@
     pointer-events: none;
 }
 
-/* Лоадер */
 .loader {
     display: flex;
     justify-content: center;
