@@ -1,0 +1,26 @@
+<div class="OrderModalBackdrop">
+  <div class="OrderModal">
+    <button type="button" class="OrderModalClose" aria-label="Закрити">✕</button>
+    <h2 class="OrderModalTitle">Офомлення замовлення</h2>
+    <form class="OrderModalForm">
+      <input type="hidden" name="productId" id="orderProductId" value="">
+
+      <div class="OrderModalField">
+        <label for="name" class="OrderModalLabel">Ім'я*</label>
+        <input type="text" id="name" name="name" class="OrderModalInput" placeholder="Вікторія" required>
+      </div>
+
+      <div class="OrderModalField">
+        <label for="phone" class="OrderModalLabel">Телефон*</label>
+        <input type="tel" id="phone" name="phone" class="OrderModalInput" placeholder="38 0__ ______" required>
+      </div>
+
+      <div class="OrderModalField">
+        <label for="comment" class="OrderModalLabel">Коментар*</label>
+        <textarea id="comment" name="comment" class="OrderModalTextarea" placeholder="Ваш коментар" required></textarea>
+      </div>
+
+      <button type="submit" class="OrderModalButton">Надіслати заявку</button>
+    </form>
+  </div>
+</div>

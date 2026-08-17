@@ -10,4 +10,14 @@ async function getData(url, params = {}) {
     }
 }
 
+async function MakeOrder(params) {
+    try {
+        const response = await axios.post('/orders', params);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export { getData, MakeOrder };
 export default getData;

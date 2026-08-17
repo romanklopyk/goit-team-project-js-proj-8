@@ -60,9 +60,37 @@ async function createDetailWindow(id) {
             </div>`;
 
         const $closeBtn = $dessertDetails.element().querySelector('.close-modal-btn');
+        const $orderBtn = $dessertDetails.element().querySelector('.dessert-modal-order-btn');
+
         $closeBtn.addEventListener('click', () => {
             $dessertDetails.close();
         });
+
+        $orderBtn.addEventListener('click', () => {
+            $dessertDetails.close();
+
+            const modalBackdrop = document.querySelector('.OrderModalBackdrop');
+            if (modalBackdrop) {
+                modalBackdrop.style.display = 'flex';
+                document.body.classList.add('no-scroll');
+
+                const productIdInput = document.getElementById('orderProductId');
+                if (productIdInput) {
+                    productIdInput.value = id;
+                }
+                return;
+            }
+
+            if (typeof window.openOrderModal === 'function') {
+                window.openOrderModal(id);
+                return;
+            }
+
+            if (typeof window.openOrderModalDirect === 'function') {
+                window.openOrderModalDirect(id);
+            }
+        });
+
         const $modalWrapper = document.querySelector('.dessert-modal-wrapper');
         $modalWrapper.addEventListener('click', e => {
             if (e.target === $modalWrapper) {
